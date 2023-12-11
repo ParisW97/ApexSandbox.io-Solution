@@ -1,0 +1,6 @@
+public String aOrAn(String word) {
+    if word[0].toLowerCase().containsAny('aeiou') {
+        return "an" + word; 
+    }
+    return "a" + word;
+}
