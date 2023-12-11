@@ -1,4 +1,6 @@
 public String aOrAn(String word) {
-    String new_word = 'an apple';
-    return new_word;
+    if word.starsWithIgnoreCase('aeiou') {
+        return ('an ' + word);
+    }
+    return ('a ' + word);
 }
