@@ -1,12 +1,12 @@
 public Boolean isPassed(Boolean passedExam, Boolean passedAssignments, Boolean passedProject) {
     Integer passed = 0;
-    if passedExam {
+    if (passedExam) {
         passed++;
     }
-    if passedAssignments {
+    if (passedAssignments) {
         passed++;
     }
-    if passedProject {
+    if (passedProject) {
         passed++;
     }
     return (passed > 1);
