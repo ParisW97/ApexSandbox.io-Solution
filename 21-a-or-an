@@ -1,6 +1,6 @@
 public String aOrAn(String word) {
-    if word.startsWithIgnoreCase('aeiou') {
-        return 'an' + ' ' + word;
+    if (word[0]).contains('aeiouAEIOU') {
+        return 'an ' + word;
     }
-    return 'a' + ' ' + word;
+    return 'a ' + word;
 }
