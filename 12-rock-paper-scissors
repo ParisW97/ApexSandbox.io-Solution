@@ -4,5 +4,7 @@ public Integer rockPaperScissors(String player1, String player2) {
     scissors BEATS paper
     paper BEATS rock
     */
-    return 0;
+    if (player1.equals(player2)) {
+        return 0;
+    }
 }
