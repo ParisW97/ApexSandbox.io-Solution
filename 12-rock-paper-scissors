@@ -4,7 +4,7 @@ public Integer rockPaperScissors(String player1, String player2) {
     scissors BEATS paper
     paper BEATS rock
     */
-    if (player1.equalsIgnoreCase(player2)) {
+    if player1.equalsIgnoreCase(player2) {
         return 0;
     }
 }
