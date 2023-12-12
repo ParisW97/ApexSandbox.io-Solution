@@ -10,5 +10,5 @@ public Integer rockPaperScissors(String player1, String player2) {
     // if jajanken.get(player1) == player2 {
     //     return 1;
     // }
-    return 2;
+    return 999;
 }
