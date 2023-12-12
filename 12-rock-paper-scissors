@@ -3,7 +3,7 @@ public Integer rockPaperScissors(String player1, String player2) {
     rock BEATS scissors
     scissors BEATS paper
     paper BEATS rock
-    */
+    
     if (player1.equalsIgnoreCase(player2)) {
         return 0;
     }
@@ -14,4 +14,25 @@ public Integer rockPaperScissors(String player1, String player2) {
         'paper' => 'rock';
     };
     return (jajanken.get(player1)).equalsIgnoreCase(player2) ? 1 : 2;
+    */
+
+    public Integer rockPaperScissors(String player1, String player2) {
+
+    if (player1 == player2) return 0;
+
+    Map<String, String> winmap = new Map<String, String>{
+
+        'rock' => 'scissors',
+
+        'paper' => 'rock',
+
+        'scissors' => 'paper'
+
+    };
+
+    if (winmap.get(player1) == player2) return 1;
+
+    return 2;
+
+}
 }
