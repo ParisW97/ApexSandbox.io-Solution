@@ -10,5 +10,17 @@ public Integer rockPaperScissors(String player1, String player2) {
     // if jajanken.get(player1) == player2 {
     //     return 1;
     // }
-    return 999;
+    Map<String, String> winmap = new Map<String, String>{
+
+        'rock' => 'scissors',
+
+        'paper' => 'rock',
+
+        'scissors' => 'paper'
+
+    };
+
+    if (winmap.get(player1) == player2) return 1;
+
+    return 2;
 }
