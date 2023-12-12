@@ -9,5 +9,5 @@ public Boolean isPassed(Boolean passedExam, Boolean passedAssignments, Boolean p
     if passedProject {
         passed++;
     }
-    return passed > 1;
+    return (passed > 1);
 }
