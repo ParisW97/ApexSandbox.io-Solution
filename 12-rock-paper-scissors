@@ -2,4 +2,5 @@ public Integer rockPaperScissors(String player1, String player2) {
     if (player1 == 'rock') {
         return 0;
     }
+    return 1;
 }
