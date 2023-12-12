@@ -1,0 +1,9 @@
+public Boolean companionPlants(String plant1, String plant2) {
+    Map<String,String> plant_map = new Map<String,String> {
+        'cucumbers' => 'lettuce',
+        'onions' => 'lettuce',
+        'carrots' => 'onions',
+        'tomatoes' => 'onions'
+    };
+    return ((plant_map.get(plant1) == plant2) || (plant_map.get(plant2) == plant1)) ? true : false;
+}
