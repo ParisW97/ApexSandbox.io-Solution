@@ -1,3 +1,3 @@
 public String evenOrOdd(Integer num) {
-    (Math.mod(num,2) == 1) ? return 'even' : return 'odd';
+    Math.mod(num,2) == 0 ? return 'even' : return 'odd';
 }
