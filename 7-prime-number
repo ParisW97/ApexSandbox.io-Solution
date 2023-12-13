@@ -1,0 +1,9 @@
+public Boolean isPrime(Integer num) {
+    Set<Integer> prime_nums = new Set<Integer>();
+    for (Integer n = 2 : n <= Math.sqrt(num) : n++) {
+        if (Math.mod(num,n) == 0) {
+            return false;
+        }
+    }
+    return true;
+}
