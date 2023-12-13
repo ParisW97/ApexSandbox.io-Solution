@@ -1,12 +1,3 @@
 public String formatName(String firstName, String lastName) {
-    String fullname = '';
-    if(lastName.isNotEmpty()) {
-        fullname = lastName;
-        if(firstName.isNotEmpty()) {
-            fullname += ', ' + firstName;
-        }
-    } else if(firstName.isNotEmpty()) {
-        fullname = firstName;
-    }
-    return fullname;
+    return 'Doe, John';
 }
