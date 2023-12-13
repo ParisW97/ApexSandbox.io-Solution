@@ -1,9 +1,10 @@
 public Integer fibonacci(Integer n) {
-    Integer temp, fib = 1, fib_prev = 1;
+    Integer temp, fib = 1, fib_prev = 1, fib_prev_prev = 0;
     for(Integer i = 1, i < n; i++) {
         temp = fib + fib_prev;
+        fib_prev_prev = fib_prev
         fib_prev = fib;
         fib = temp;
     }
-    return fib_prev;
+    return fib_prev_prev;
 }
