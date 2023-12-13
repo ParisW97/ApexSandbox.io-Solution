@@ -1,3 +1,3 @@
 public String nameFromEmail(String email) {
-    return email.substring(0,email.indexOfIgnoreCase('.')) + ' ' + email.substring(email.indexOfIgnoreCase('.')+1,email.indexOfIgnoreCase('@'));
+    return email.substring(0,email.indexOfIgnoreCase('.')).capitalize() + ' ' + email.substring(email.indexOfIgnoreCase('.')+1,email.indexOfIgnoreCase('@')).capitalize();
 }
