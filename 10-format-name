@@ -1,6 +1,6 @@
 public String formatName(String firstName, String lastName) {
     String fullname = '';
-    if(!astName.isNotEmpty()) {
+    if(lastName.isNotEmpty()) {
         fullname = lastName;
         if(firstName.isNotEmpty()) {
             fullname += ', ' + firstName;
