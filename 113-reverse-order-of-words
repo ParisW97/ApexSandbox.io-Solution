@@ -1,13 +1,19 @@
 public String reverseWordsInASentence(String sentence){
-    Integer first = sentence.lastIndexOf(' '), last = sentence.length();
-    String sentence_in_reverse = '';
-    while(first != -1) {
-        // add word to string
-        sentence_in_reverse += sentence.substring(first,last);
-        last = first;
-        first = sentence.lastIndexOf(' ', last-1);
+    Integer first = 0, last = sentence.indexOf(' ');
+    List<String> word_list = new List<String>();
+    String reverse_sentence = '';
+    while(last != -1) {
+        // add word to list
+        word_list.add(sentence.substring(first,last));
+        first = last + 1;
+        last = sentence.indexOf(' ');
     }
-    // add last word to string
-    sentence_in_reverse += sentence.substring(0,last);
-    return sentence_in_reverse;
+    // add last word to list
+    word_list.add(sentence(substring(first,sentence.length())));
+    // add words in reverse to string
+    for(Integer i = word_list.size()-1; i > 0; i--) {
+        reverse_sentence += word_list.get(i) + ' ';
+    }
+    reverse_sentence += word_list.get(0);
+    return reverse_sentence;
 }
