@@ -7,5 +7,6 @@ public String changeTimeFormat(String strTime) {
     } else if(hours > 12) {
         hours -= 12;
     }
-    return String.valueOf(hours) + ':' + minutes + ' ' + am_or_pm;
+    String str_hours = hours > 9 ? String.valueOf(hours) : '0' + String.valueOf(hours);
+    return str_hours + ':' + minutes + ' ' + am_or_pm;
 }
