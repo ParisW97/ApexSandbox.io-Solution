@@ -3,10 +3,10 @@ public String reverseWordsInASentence(String sentence){
     String reverse_order = '';
     while (first != -1) {
         // add word to string
-        reverse_order += sentence.substring(first,last);
+        reverse_order += sentence.substring(first+1,last) + ' ';
         last = first;
         first = sentence.lastIndexOf(' ', last-1);
     }
-    reverse_order += ' ' + sentence.substring(0,last);
+    reverse_order += sentence.substring(0,last);
     return reverse_order;
 }
