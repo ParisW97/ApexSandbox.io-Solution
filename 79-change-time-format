@@ -1,0 +1,11 @@
+public String changeTimeFormat(String strTime) {
+    Integer hours = Integer.valueOf(strTime.substringBefore(':'));
+    String minutes = strTime.substringAfter(':'));
+    String am_or_pm = hours > 11 ? 'PM' : 'AM';
+    if(hours == 0) {
+        hours += 12;
+    } else if(hours > 12) {
+        hours -= 12;
+    }
+    return String.valueOf(hours) + ':' + minutes + ' ' + am_or_pm;
+}
