@@ -1,0 +1,13 @@
+public String reverseWordsInASentence(String sentence){
+    Integer first = sentence.lastIndexOf(' '), last = sentence.length();
+    String sentence_in_reverse = '';
+    while(first != -1) {
+        // add word to string
+        sentence_in_reverse += sentence.substring(first,last) + ' ';
+        last = first;
+        first = sentence.substring(0,last).lastIndexOf(' ');
+    }
+    // add last word of sentence
+    sentence_in_reverse += sentence.substring(0,last);
+    return sentence_in_reverse;
+}
