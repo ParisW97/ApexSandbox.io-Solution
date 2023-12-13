@@ -5,7 +5,7 @@ public String reverseWordsInASentence(String sentence){
         // add word to string
         sentence_in_reverse += sentence.substring(first,last);
         last = first;
-        first = (sentence.substring(0,last)).lastIndexOf(' ');
+        first = sentence.lastIndexOf(' ', last-1);
     }
     // add last word to string
     sentence_in_reverse += sentence.substring(0,last);
