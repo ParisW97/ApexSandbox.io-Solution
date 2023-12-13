@@ -41,5 +41,5 @@ public Integer nextPrime(Integer num) {
             }
        }    
    }
-    return next_prime_num;
+   return next_prime_num;
 }
