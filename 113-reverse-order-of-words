@@ -1,4 +1,7 @@
 public String reverseWordsInASentence(String sentence){
+    if ((sentence == null) || (sentence == '')) {
+        return sentence;
+    }
     Integer first = sentence.lastIndexOf(' '), last = sentence.length();
     String reverse_order = '';
     while (first != -1) {
