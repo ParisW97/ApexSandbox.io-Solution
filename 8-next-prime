@@ -7,28 +7,31 @@ public Integer nextPrime(Integer num) {
    prime_num_list.add(2); // first prime number above 1
    Integer next_prime_num = num;
    Boolean is_prime = true;
+   
    // make list of prime number that are less than 
    for(Integer i = 2; i <= num; i++) {
        for(Integer n : prime_num_list) {
-           if(n > Math.sqrt(i)) {
-               // number is larger than square root of i -> i is a prime number
-               is_prime = true;
-               break;
-           }
            if(Math.mod(i,n) == 0) {
                // i is not a prime number
                is_prime = false;
                break;
            }
+           if(n > Math.sqrt(i)) {
+               // number is larger than square root of i -> i is a prime number
+               is_prime = true;
+               break;
+           }
+       }
         if(is_prime) {
             // add i to list of prime numbers
             prime_num_list.add(i);
         }
         is_prime = true;
-       }
    }
+   
    // set prime to false
    is_prime = false;
+   
    while(!is_prime) {
        next_prime_num++; // increment next possible prime num
        for(Integer n : prime_num_list) {
