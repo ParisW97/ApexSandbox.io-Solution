@@ -1,22 +1,26 @@
 public Integer nextPrime(Integer num) {
-   List<Integer> prime_num_list = List<Integer>();
+   // edge case
+   if(num < 2) {
+       return 2;
+   }
+   List<Integer> prime_num_list = new List<Integer>();
    prime_num_list.add(2); // first prime number above 1
    Integer next_prime_num = num;
    Boolean is_prime = true;
    // make list of prime number that are less than 
    for(Integer i = 2; i <= num; i++) {
-       for(n : prime_num_list) {
-           if (n > Math.sqrt(i)) {
+       for(Integer n : prime_num_list) {
+           if(n > Math.sqrt(i)) {
                // number is larger than square root of i -> i is a prime number
                is_prime = true;
                break;
            }
-           if (Math.mod(i,n) == 0) {
+           if(Math.mod(i,n) == 0) {
                // i is not a prime number
                is_prime = false;
                break;
            }
-        if (is_prime) {
+        if(is_prime) {
             // add i to list of prime numbers
             prime_num_list.add(i);
         }
@@ -25,13 +29,13 @@ public Integer nextPrime(Integer num) {
    }
    // set prime to false
    is_prime = false;
-   while (!is_prime) {
+   while(!is_prime) {
        next_prime_num++; // increment next possible prime num
-       for (n : prime_num_list) {
-            if (Math.mod(next_prime_num,n)==0) { // not a prime number
+       for(Integer n : prime_num_list) {
+            if(Math.mod(next_prime_num,n)==0) { // not a prime number
                 break;
             }
-            if (n > Math.sqrt(next_prime_num)) { // prime number found
+            if(n > Math.sqrt(next_prime_num)) { // prime number found
                 return next_prime_num;
             }
        }    
