@@ -12,7 +12,7 @@ public void createCourseAndClass(String name, String description) {
     apxio__Class__c new_class = new apxio__Class__c();
     
     // master-detail relationship
-    new_class.apxio__Course__c = new_class.Id;
+    new_class.apxio__Course__c = new_course.Id;
 
     new_class.Name = name;
     if(description != null) {
