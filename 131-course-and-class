@@ -15,17 +15,7 @@ public void createCourseAndClass(String name, String description) {
     new_class.apxio__Course__c = new_course.Id;
 
     new_class.Name = name;
-    if(description != null) {
-        if(description.length() <= 255) {
-            new_class.apxio__Description__c = description;
-        }
-        else {
-            new_class.apxio__Description__c = description.left(255);
-        }
-    }
-    else {
-        new_class.apxio__Description__c = description.left(255);
-    }
+    new_class.apxio__Description__c = description != null ? description.left(255) : null;
 
     // insert class record
     insert new_class;
