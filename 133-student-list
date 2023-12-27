@@ -1,0 +1,14 @@
+public void insertStudents(List<String> studentNames, List<String> studentEmails) {
+    // list of student record
+    List<apxio__Student__c> student_list = new List<apxio__Student__c>();
+    for(Integer i = 0; i < studentNames.size(); i++) {
+        // new student record
+        apxio__Student__c new_student = new apxio__Student__c();
+        new_student.Name = studentNames[i];
+        new_student.apxio__Email__c = studentEmails[i];
+        // add student to list
+        student_list.add(new_student);
+    }
+    // insert list of records to org
+    insert student_list;
+}
