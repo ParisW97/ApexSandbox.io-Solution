@@ -1,0 +1,32 @@
+public void createCourseAndClass(String name, String description) {
+    // new course record
+    apxio__Course__c new_course = new apxio__Course__c();
+
+    new_course.Name = name;
+    new_course.apxio__Course_Details__c = description;
+
+    // insert course record
+    insert new_course;
+
+    // new class record
+    apxio__Class__c new_class = new apxio__Class__c();
+    
+    // master-detail relationship
+    new_class.apxio__Course__c = new_class.Id;
+
+    new_class.Name = name;
+    if(description != null) {
+        if(description.length() <= 255) {
+            new_class.apxio__Description__c = description;
+        }
+        else {
+            new_class.apxio__Description__c = description.left(255);
+        }
+    }
+    else {
+        new_class.apxio__Description__c = description.left(255);
+    }
+
+    // insert class record
+    insert new_class;
+}
