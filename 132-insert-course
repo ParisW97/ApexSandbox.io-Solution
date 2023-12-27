@@ -1,0 +1,21 @@
+public Id insertCourse(String name, String details, Integer credits) {
+    // check for credits
+    if (credits < 1 || credits > 4) {
+        // invalid value given for credits
+        return null;
+    }
+
+    // create new course object
+    apxio__Course__c new_course = new apxio__Course__c();
+
+    // assign: name, details, credits
+    new_course.Name = name;
+    new_course.apxio__Course_Details__c = details;
+    new_course.apxio__Credits__c = String.valueOf(credits);
+
+    // insert course to org
+    insert new_course;
+
+    // return Id
+    return new_course.Id;
+}
