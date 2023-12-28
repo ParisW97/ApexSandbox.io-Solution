@@ -1,0 +1,12 @@
+public Id classFromCourse(String courseName) {
+    // query course for Id
+    apxio__Course__c course = [SELECT Id FROM apxio__Course__c WHERE Name = :courseName];
+    // new class record
+    apxio__Class__c new_class = new apxio__Class__c();
+    new_class.apxio__Course__c = course.Id;
+    new_class.Name = courseName;
+    // insert class record
+    insert new_class;
+    // return class Id
+    return new_class.Id;
+}
