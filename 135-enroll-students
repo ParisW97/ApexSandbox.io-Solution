@@ -1,0 +1,17 @@
+public void enrollStudents(List<String> emails, String className) {
+    // query student Ids from given email list
+    apxio__Student__c student_list = [SELECT Id FROM apxio__Student__c WHERE apxio__Email__c IN emails];
+    // query class Id
+    apxio__Class__c offered_class = [SELECT Id FROM apxio__Class__c WHERE Name = :className];
+
+    List<apxio__Class_Enrollment__c> class_enrollment_list = new List<apxio__Class_Enrollment__c>();
+    
+    for (apxio__Student__c student : student_list) {
+        apxio__Class_Enrollment__c class_enrollment = new apxio__Class_Enrollment__c();
+        class_enrollment.apxio__Offered_Class__c = offered_class.Id;
+        class_enrollment.apxio__Student__c = student.Id;
+        class_enrollment_list.add(class_enrollment);
+    }
+
+    insert class_enrollment_list;
+}
