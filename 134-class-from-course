@@ -8,7 +8,7 @@ public Id classFromCourse(String courseName) {
     }
     // new class record
     apxio__Class__c new_class = new apxio__Class__c();
-    new_class.apxio__Course__c = course.Id;
+    new_class.apxio__Course__c = course[0].Id;
     new_class.Name = courseName;
     // insert class record
     insert new_class;
