@@ -2,7 +2,7 @@ public Id classFromCourse(String courseName) {
     // query course for Id
     List<apxio__Course__c> course = [SELECT Id FROM apxio__Course__c WHERE Name = :courseName];
     // check if class found
-    if (course[0] == null) {
+    if (course.isEmpty() == null) {
         // class not found
         return null;
     }
