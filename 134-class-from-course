@@ -1,8 +1,8 @@
 public Id classFromCourse(String courseName) {
     // query course for Id
-    apxio__Course__c course = [SELECT Id FROM apxio__Course__c WHERE Name = :courseName];
+    List<apxio__Course__c> course = [SELECT Id FROM apxio__Course__c WHERE Name = :courseName];
     // check if class found
-    if (course == null) {
+    if (course[0] == null) {
         // class not found
         return null;
     }
