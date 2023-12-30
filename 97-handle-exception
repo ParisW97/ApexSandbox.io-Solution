@@ -9,6 +9,6 @@ public String divide(Integer a, Integer b){
         return me.getMessage();
     } catch(Exception e) {
         // catch all exception for any other error
-        return System.debug('Unknown error has occurred: ', + e.getMessage());
+        return ('Unknown error has occurred: ' + e.getMessage());
     }
 }
