@@ -1,0 +1,26 @@
+public List<Account> checkAccounts(List<Account> accounts)
+{
+    try {
+        if(checkAccounts.isEmpty()) {
+            // empty list passed
+            throw new IllegalArgumentException('accounts should not be null');
+        }
+        for(Account acct : checkAccounts) {
+            if(acct.BillingCity == null) {
+                // found account without a billing city
+                throw new AccountException('Invalid BillingCity');
+            }
+        }
+        // valid list
+        return checkAccounts;
+    } catch(IllegalArgumentException iae) {
+        System.debug(iae.getMessage());
+    } catch(AccountException ae) {
+        System.debug(ae.getMessage());
+    }
+}
+
+//do not remove the following custom-defined exception
+public class AccountException extends Exception {
+
+}
