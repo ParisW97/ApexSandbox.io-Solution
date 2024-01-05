@@ -12,10 +12,6 @@ public List<Account> checkAccounts(List<Account> accounts)
         }
         // valid list
         return accounts;
-    } catch(IllegalArgumentException iae) {
-        System.debug(iae.getMessage());
-    } catch(AccountException ae) {
-        System.debug(ae.getMessage());
     }
 }
 
