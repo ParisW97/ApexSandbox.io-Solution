@@ -2,10 +2,10 @@ public List<sObject> getListOfsObject(List<Account> accounts, List<Contact> cont
 {
     List<SObject> sobject_list = new List<SObject>();
     for(Account account : accounts) {
-        sobject_list.add(account.Name);
+        sobject_list.add(account);
     }
     for(Contact contact : contacts) {
-        sobject_list.add(contact.LastName);
+        sobject_list.add(contact);
     }
     return sobject_list;
 }
