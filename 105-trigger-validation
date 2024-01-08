@@ -7,5 +7,3 @@ public void validateInsert(List<Opportunity> opportunities){
         }
     }
 }
-
-// opportunity.addError('Description should not be empty for Closed Won opportunity.');
